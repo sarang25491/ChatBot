@@ -1,0 +1,7 @@
+CHatBot
+
+This is my second attemp to write a chat bot in Java.
+The first attempt was very messy and quite embarrassing so I have decided to start again.
+
+External Libraries.
+yamlBeans  -  http://yamlbeans.sourceforge.net/

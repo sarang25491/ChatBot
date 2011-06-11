@@ -19,6 +19,11 @@
 
 package com.ki113d.chatbot;
 
+import com.ki113d.chatbot.exceptions.WordException;
+import com.ki113d.chatbot.vocab.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author Ki113d
@@ -26,9 +31,19 @@ package com.ki113d.chatbot;
  */
 public class Main {
 
+    public static Vocabulary vocab = new Vocabulary();
+    
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+    }
+    
+    public static void addWord(Word word) {
+        try {
+            vocab.addWord(word);
+        } catch (WordException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 }

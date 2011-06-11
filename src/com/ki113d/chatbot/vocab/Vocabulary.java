@@ -3,6 +3,8 @@ package com.ki113d.chatbot.vocab;
 import com.ki113d.chatbot.exceptions.WordException;
 import com.ki113d.chatbot.util.YAML;
 import java.util.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * The vocabulary is merely a collection of words that the bot can use to
@@ -93,6 +95,10 @@ public class Vocabulary {
      * Loads the vocabulary from disk.
      */
     public void loadVocab() {
-        words = YAML.loadVocab();
+        try {
+            words = YAML.loadVocab();
+        } catch (Exception ex) {
+            Logger.getLogger(Vocabulary.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 }
